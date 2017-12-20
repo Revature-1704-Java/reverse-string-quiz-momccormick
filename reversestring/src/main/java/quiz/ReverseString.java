@@ -4,6 +4,7 @@ public class ReverseString {
     public String reverse(String input) {
         //return new StringBuffer(input).reverse().toString();
     	return reverseViaForLoop(input);
+    	//return reverseViaSubstringLoop(input);
     }
     
     private String reverseViaForLoop(String input) {
@@ -14,5 +15,15 @@ public class ReverseString {
     	}
     	
     	return reverseBuffer.toString();
+    }
+    
+    private String reverseViaSubstringLoop(String input) {
+    	String reverseString = new String();
+    	
+    	for(int i = 0; i < input.length(); i++) {
+    		reverseString = input.substring(i,i+1) + reverseString;
+    	}
+    	
+    	return reverseString;
     }
 }
